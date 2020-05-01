@@ -1,0 +1,31 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  //   .logo {
+  //   }
+  &-links {
+    font-weight: 600;
+    padding: 0 1em;
+  }
+  &-links:hover {
+    background: rgb(243, 131, 131);
+  }
+}
+.login-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(134, 90, 85);
+  &-form {
+    display: flex;
+    flex-direction: column;
+    background-color: red($color: #000000);
+    padding: 20px;
+    margin: 100px;
+  }
+}
+.modal {
+  background: rgba(0, 0, 0, 0.315);
+}
