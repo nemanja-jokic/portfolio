@@ -7,12 +7,12 @@ import {
   Redirect,
 } from "react-router-dom";
 import "./App.css";
-import LoginScreen from "./screen/login.screen.js";
+import LoginScreen from "./screens/login.screen.js";
 import "./style/main.scss";
 import Modal from "./components/modal.js";
-import HomeScreen from "./screen/home.screen.js";
-import AboutScreen from "./screen/about.screen.js";
-import ContactScreen from "./screen/contact.screen.js";
+import HomeScreen from "./screens/home.screen.js.jss";
+import AboutScreen from "./screens/about.screen.jss";
+import ContactScreen from "./screens/contact.screen.js.jss";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class App extends React.Component {
     this.state = {
       modal: true,
       entrySucces: false,
+      loginScreen: true,
     };
   }
   render() {
@@ -35,7 +36,14 @@ class App extends React.Component {
           {!!this.state.entrySucces && <Nav />}
           <Switch>
             <Route exact path="/">
-              <LoginScreen modal={this.state.modal} />
+              {!!this.state.loginScreen && (
+                <LoginScreen
+                  modal={this.state.modal}
+                  submit={() =>
+                    this.setState({ entrySucces: true, loginScreen: false })
+                  }
+                />
+              )}
             </Route>
             {!!this.state.entrySucces && (
               <>

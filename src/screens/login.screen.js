@@ -13,13 +13,17 @@ class LoginScreen extends Component {
     return (
       <div className={`login-screen ${style}`}>
         {!!this.state.redirect && <Redirect to={this.state.redirect} />}
-        <div className="login-screen-form">
+        <div className="login-screen-form red">
           <div>HELLO</div>
           <div> tultip-name</div>
           <div> tultip-email</div>
           <div> tultip-paswword</div>
           <div> tultip-confirm-pasword</div>
-          <div></div>
+          <div>
+            maybe we can make here some check if somebody is robot(whith couple
+            of pics to choose right)
+          </div>
+          <div onClick={this.props.submit}>SUBMIT</div>
         </div>
       </div>
     );
