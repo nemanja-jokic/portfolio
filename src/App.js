@@ -20,11 +20,19 @@ class App extends React.Component {
     super(props);
     this.state = {
       modal: true,
-      entrySucces: false,
       loginScreen: true,
     };
   }
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) =>
+      this.setState({
+        lon: position.coords.longitude,
+        lat: position.coords.latitude,
+      })
+    );
+  }
   render() {
+    const { lat, lon } = this.state;
     return (
       <div className="App">
         <Router>
@@ -49,7 +57,7 @@ class App extends React.Component {
             {!!this.state.entrySucces && (
               <>
                 <Route exact path="/home">
-                  <HomeScreen />
+                  <HomeScreen coords={[lat, lon]} />
                 </Route>
                 <Route exact path="/about">
                   <AboutScreen />
