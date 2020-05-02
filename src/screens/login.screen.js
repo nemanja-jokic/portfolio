@@ -9,7 +9,7 @@ class LoginScreen extends Component {
     };
   }
   render() {
-    const style = this.props.modal ? "modal" : "";
+    const style = !!this.props.modal ? "modal" : "";
     return (
       <div className={`login-screen ${style}`}>
         {!!this.state.redirect && <Redirect to={this.state.redirect} />}

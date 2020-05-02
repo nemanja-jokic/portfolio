@@ -10,9 +10,9 @@ import "./App.css";
 import LoginScreen from "./screens/login.screen.js";
 import "./style/main.scss";
 import Modal from "./components/modal.js";
-import HomeScreen from "./screens/home.screen.js.jss";
-import AboutScreen from "./screens/about.screen.jss";
-import ContactScreen from "./screens/contact.screen.js.jss";
+import HomeScreen from "./screens/home.screen.js";
+import AboutScreen from "./screens/about.screen.js";
+import ContactScreen from "./screens/contact.screen.js";
 
 class App extends React.Component {
   constructor(props) {
