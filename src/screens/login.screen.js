@@ -11,21 +11,54 @@ class LoginScreen extends Component {
   render() {
     const style = this.props.modal ? "modal" : "";
     return (
-      <div className={`login-screen ${style}`}>
-        {!!this.state.redirect && <Redirect to={this.state.redirect} />}
-        <div className="login-screen-form red">
-          <div>HELLO</div>
-          <div> tultip-name</div>
-          <div> tultip-email</div>
-          <div> tultip-paswword</div>
-          <div> tultip-confirm-pasword</div>
-          <div>
-            maybe we can make here some check if somebody is robot(whith couple
-            of pics to choose right)
+         <div  class="container">
+           <div class="header">
+		<h2>Create Account</h2>
+	</div>
+        
+<form id="form" class="form">
+
+
+<div class="form-control">
+  <label for="username">Username</label>
+  <input type="text" placeholder="danijel" id="username" />
+  <i class="fa fa-check-circle"></i>
+  <i class="fa fa-exclamation-circle"></i>
+  <small>Error message 1</small>
+</div>
+
+<div class="form-control">
+  <label for="email">Email</label>
+  <input type="email" placeholder="danijel@gmail.com" id="email"  />
+  <i class="fa fa-check-circle"></i>
+  <i class="fa fa-exclamation-circle"></i>
+  <small>Error message</small>
+</div>
+
+<div class="form-control">
+  <label for="password">Password</label>
+  <input type="password" placeholder="Password" id="password" onfocus='sifra(this)' onfocusout='sifraOut(this)' onkeyup="snagaSifre(this)"/>
+  <i class="fa fa-check-circle"></i>
+  <i class="fa fa-exclamation-circle"></i>
+  <div class="snaga-sifre">
+    <div id="traka"></div>
+  </div>
+  <p id="text">Upozorenje! CAPS LOCK je ukljucen.</p>
+  <small>Error message</small>
+</div>
+
+<div class="form-control">
+  <label for="password2">Password check</label>
+  <input type="text" placeholder="Password two" id="password2"/>
+  <i class="fa fa-check-circle"></i>
+  <i class="fa fa-exclamation-circle"></i>
+  <small>Error message</small>
+</div>
+
+<input type="submit" value="Submit" onClick={this.props.submit} />
+</form>
+        
           </div>
-          <div onClick={this.props.submit}>SUBMIT</div>
-        </div>
-      </div>
     );
   }
 }
