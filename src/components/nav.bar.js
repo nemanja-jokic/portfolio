@@ -23,10 +23,10 @@ export default class Nav extends React.Component {
         </div>
 
         <div onClick={this.redirecting} id="about" className="nav-bar-links">
-          <p> ABOUT </p>
+         ABOUT 
         </div>
         <div onClick={this.redirecting} id="contact" className="nav-bar-links">
-          <p> CONTACT </p>
+          CONTACT 
         </div>
       </div>
     );
