@@ -8,9 +8,10 @@ export default class HomeScreen extends Component {
     };
   }
   componentDidMount() {
-    const { coords } = this.props;
+    const { lat, lon } = this.props;
+    console.log(lat);
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${coords[0]}&lon=${coords[1]}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
     )
       .then((res) => res.json())
       .then((data) => console.log(data));
@@ -18,7 +19,8 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <div>
-        <div>hello HOME</div>
+        {/* <img src='http://openweathermap.org/img/w/" + weatherDataIn.weather[0].icon + ".png'/> */}
+        HHHH
       </div>
     );
   }

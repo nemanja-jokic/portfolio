@@ -57,7 +57,7 @@ class App extends React.Component {
             {!!this.state.entrySucces && (
               <>
                 <Route exact path="/home">
-                  <HomeScreen coords={[lat, lon]} />
+                  <HomeScreen lat={lat} lon={lon} />
                 </Route>
                 <Route exact path="/about">
                   <AboutScreen />
