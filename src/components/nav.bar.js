@@ -30,9 +30,9 @@ export default class Nav extends React.Component {
         </div> */}
         <nav id="nav">
                 	<ul>
-                    	<li><a href="about.html">HOME</a></li>
-                    	<li><a href="products.html">ABOUT</a></li>
-                    	<li><a href="references.html">CONTACT</a></li>
+                    	<li><a href="#">HOME</a></li>
+                    	<li><a href="#">ABOUT</a></li>
+                    	<li><a href="#">CONTACT</a></li>
                     </ul>
                     {/* <a href="#" id="respmenu" class="button"><i class="fa fa-lg fa-navicon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</a> */}
         </nav>
