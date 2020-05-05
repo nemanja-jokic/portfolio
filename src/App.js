@@ -32,6 +32,7 @@ class App extends React.Component {
     );
   }
   render() {
+    console.log(navigator);
     const { lat, lon } = this.state;
     return (
       <div className="App">
@@ -49,7 +50,11 @@ class App extends React.Component {
                 <LoginScreen
                   modal={this.state.modal}
                   submit={() =>
-                    this.setState({ entrySucces: true, loginScreen: false })
+                    this.setState({
+                      entrySucces: true,
+                      loginScreen: false,
+                      redirect: "/home",
+                    })
                   }
                 />
               )}

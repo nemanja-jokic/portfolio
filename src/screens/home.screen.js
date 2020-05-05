@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Frame from "../components/frame.js";
-import Nav from "../components/nav.bar";
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -35,7 +34,9 @@ export default class HomeScreen extends Component {
         });
     } else {
       console.log("ssss");
-      alert("PLEASE ENABLE YOUR LOCATION");
+      setTimeout(() => {
+        alert("PLEASE ENABLE YOUR LOCATION");
+      }, 1000);
     }
   }
   render() {
@@ -57,7 +58,7 @@ export default class HomeScreen extends Component {
           }
           data={this.state.weatherData}
         />
-        <Frame type="CALCULATOR" nav={<Nav />} />
+        <Frame type="CALCULATOR" />
         <Frame type="TODO-LIST" />
       </div>
     );
