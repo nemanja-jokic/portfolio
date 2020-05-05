@@ -6,8 +6,13 @@ export default function Frame({ content, data, type, nav }) {
       {type === "WEATHER" ? (
         <div>
           {" "}
-          <div>NAME :{data.name}</div>
-          <div>TEMP : {(data.temp - 32) / 1.8}</div>
+          <div>NAME :{data.name ? data.name : "PLEASE ENABLE GEOLOCATION"}</div>
+          <div>
+            TEMP :{" "}
+            {data.temp
+              ? (data.temp - 273.15).toFixed(1)
+              : "PLEASE ENABLE GEOLOCATION"}
+          </div>
           <div>FEELS_LIKE : {data.feels_like}</div>
           <div> {content}</div>
           <div>DESCRIPTION : {data.description}</div>
