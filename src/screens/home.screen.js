@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Frame from "../components/frame.js";
+import Nav from "../components/nav.bar";
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -51,7 +52,8 @@ export default class HomeScreen extends Component {
           }
           data={this.state.weatherData}
         />
-        <Frame type="CALCULATOR" />
+        <Frame type="CALCULATOR" nav={<Nav />} />
+        <Frame type="TODO-LIST" />
       </div>
     );
   }

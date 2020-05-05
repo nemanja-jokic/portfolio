@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Frame({ content, data, type }) {
+export default function Frame({ content, data, type, nav }) {
   return (
     <div className="frame">
       {type === "WEATHER" ? (
@@ -13,7 +13,7 @@ export default function Frame({ content, data, type }) {
           <div>DESCRIPTION : {data.description}</div>
         </div>
       ) : (
-        <div>CALCULATOR</div>
+        <div>CALCULATOR{nav}</div>
       )}
     </div>
   );
