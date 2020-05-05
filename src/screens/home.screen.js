@@ -12,33 +12,30 @@ export default class HomeScreen extends Component {
   componentDidMount() {
     const { lat, lon } = this.props;
     let weatherData = {};
-    if (!!lat && !!lon) {
-      fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          weatherData.name = data.name;
-          weatherData.temp = data.main.temp;
-          weatherData.feels_like = data.main.feels_like;
-          weatherData.pressure = data.main.pressure;
-          weatherData.country = data.sys.country;
-          weatherData.description = data.weather[0].description;
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
+      // `https://api.openweathermap.org/data/2.5/weather?lat=44.75&lon=20.48&appid=4a444aa745a6a69baa47f2380e6bf8ea`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        weatherData.name = data.name;
+        weatherData.temp = data.main.temp;
+        weatherData.feels_like = data.main.feels_like;
+        weatherData.pressure = data.main.pressure;
+        weatherData.country = data.sys.country;
+        weatherData.description = data.weather[0].description;
+        weatherData.wind = data.wind.speed;
+        weatherData.humidity = data.main.humidity;
 
-          this.setState({
-            weatherIcon: data.weather[0].icon,
-            weatherData: weatherData,
-            name: data.name,
-          });
+        this.setState({
+          weatherIcon: data.weather[0].icon,
+          weatherData: weatherData,
+          name: data.name,
         });
-    } else {
-      console.log("ssss");
-      setTimeout(() => {
-        alert("PLEASE ENABLE YOUR LOCATION");
-      }, 1000);
-    }
+      });
   }
+
   render() {
     return (
       <div>
