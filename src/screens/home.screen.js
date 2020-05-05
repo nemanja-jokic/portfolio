@@ -51,22 +51,7 @@ export default class HomeScreen extends Component {
           }
           data={this.state.weatherData}
         />
-        <Frame
-          type="CALCULATOR"
-          content={
-            !!this.state.weatherIcon && (
-              <img
-                src={
-                  "http://openweathermap.org/img/w/" +
-                  this.state.weatherIcon +
-                  ".png"
-                }
-                alt="weather-icon"
-              />
-            )
-          }
-          data={this.state.weatherData}
-        />
+        <Frame type="CALCULATOR" />
       </div>
     );
   }

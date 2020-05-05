@@ -29,14 +29,21 @@ export default class Nav extends React.Component {
           CONTACT 
         </div> */}
         <nav id="nav">
-                	<ul>
-                    	<li><a href="#">HOME</a></li>
-                    	<li><a href="#">ABOUT</a></li>
-                    	<li><a href="#">CONTACT</a></li>
-                    </ul>
-                    {/* <a href="#" id="respmenu" class="button"><i class="fa fa-lg fa-navicon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</a> */}
+          <ul>
+            <li>
+              <a onClick={this.redirecting} id="home">
+                HOME
+              </a>
+            </li>
+            <li>
+              <a href="#">ABOUT</a>
+            </li>
+            <li>
+              <a href="#">CONTACT</a>
+            </li>
+          </ul>
+          {/* <a href="#" id="respmenu" class="button"><i class="fa fa-lg fa-navicon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</a> */}
         </nav>
-            
       </div>
     );
   }
