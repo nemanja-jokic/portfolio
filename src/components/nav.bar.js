@@ -18,7 +18,7 @@ export default class Nav extends React.Component {
       <div className="nav-bar">
         {!!this.state.redirect && <Redirect to={this.state.redirect} />}
         <div className="logo">Logo</div>
-        <div onClick={this.redirecting} id="home" className="nav-bar-links">
+        {/* <div onClick={this.redirecting} id="home" className="nav-bar-links">
           HOME
         </div>
 
@@ -27,7 +27,16 @@ export default class Nav extends React.Component {
         </div>
         <div onClick={this.redirecting} id="contact" className="nav-bar-links">
           CONTACT 
-        </div>
+        </div> */}
+        <nav id="nav">
+                	<ul>
+                    	<li><a href="#">HOME</a></li>
+                    	<li><a href="#">ABOUT</a></li>
+                    	<li><a href="#">CONTACT</a></li>
+                    </ul>
+                    {/* <a href="#" id="respmenu" class="button"><i class="fa fa-lg fa-navicon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</a> */}
+        </nav>
+            
       </div>
     );
   }
