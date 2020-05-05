@@ -69,7 +69,7 @@ export default function Frame({ content, data, type, nav }) {
       ) : (
         <div>TODO_LIST</div>
       )}
-      )}
+
       <div className="like-place">HERE ARE PLACE FOR LIKE</div>
     </div>
   );
