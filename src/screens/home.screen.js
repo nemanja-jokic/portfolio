@@ -14,6 +14,7 @@ export default class HomeScreen extends Component {
     let weatherData = {};
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
+      // `https://api.openweathermap.org/data/2.5/weather?lat=44.75&lon=20.48&appid=4a444aa745a6a69baa47f2380e6bf8ea`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -24,6 +25,8 @@ export default class HomeScreen extends Component {
         weatherData.pressure = data.main.pressure;
         weatherData.country = data.sys.country;
         weatherData.description = data.weather[0].description;
+        weatherData.wind = data.wind.speed;
+        weatherData.humidity = data.main.humidity;
 
         this.setState({
           weatherIcon: data.weather[0].icon,
