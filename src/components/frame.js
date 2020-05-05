@@ -1,5 +1,6 @@
 import React from "react";
 
+
 export default function Frame({ content, data, type }) {
 
   var day = new Date().getDay();
@@ -48,9 +49,10 @@ export default function Frame({ content, data, type }) {
           </div>
           
           
+
         </div>
       ) : (
-        <div>CALCULATOR</div>
+        <div>CALCULATOR{nav}</div>
       )}
     </div>
   );

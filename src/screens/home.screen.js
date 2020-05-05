@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Frame from "../components/frame.js";
+import Nav from "../components/nav.bar";
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -28,12 +29,16 @@ export default class HomeScreen extends Component {
         weatherData.wind = data.wind.speed;
         weatherData.humidity = data.main.humidity;
 
-        this.setState({
-          weatherIcon: data.weather[0].icon,
-          weatherData: weatherData,
-          name: data.name,
+          this.setState({
+            weatherIcon: data.weather[0].icon,
+            weatherData: weatherData,
+            name: data.name,
+          });
         });
-      });
+    } else {
+      console.log("ssss");
+      alert("PLEASE ENABLE YOUR LOCATION");
+    }
   }
   render() {
     return (
@@ -54,7 +59,8 @@ export default class HomeScreen extends Component {
           }
           data={this.state.weatherData}
         />
-        <Frame type="CALCULATOR" />
+        <Frame type="CALCULATOR" nav={<Nav />} />
+        <Frame type="TODO-LIST" />
       </div>
     );
   }
