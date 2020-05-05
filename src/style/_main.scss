@@ -13,25 +13,3 @@
     background: rgb(243, 131, 131);
   }
 }
-.login-screen {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &-form {
-    display: flex;
-    flex-direction: column;
-    background: red($color: #fd0a0a) !important;
-    padding: 20px;
-    margin: 100px;
-    opacity: 1;
-  }
-}
-.modal {
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.315);
-  transition: 2s all ease-in-out;
-}
-.red {
-  background: red;
-}
