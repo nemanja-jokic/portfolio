@@ -23,6 +23,7 @@ export default class HomeScreen extends Component {
         weatherData.feels_like = data.main.feels_like;
         weatherData.pressure = data.main.pressure;
         weatherData.country = data.sys.country;
+        weatherData.description = data.weather[0].description;
 
         this.setState({
           weatherIcon: data.weather[0].icon,
