@@ -6,6 +6,7 @@ export default class HomeScreen extends Component {
     super(props);
     this.state = {
       temp: "",
+      weatherData: {},
     };
   }
   componentDidMount() {
@@ -22,9 +23,11 @@ export default class HomeScreen extends Component {
         weatherData.feels_like = data.main.feels_like;
         weatherData.pressure = data.main.pressure;
         weatherData.country = data.sys.country;
+
         this.setState({
           weatherIcon: data.weather[0].icon,
           weatherData: weatherData,
+          name: data.name,
         });
       });
   }
@@ -32,6 +35,7 @@ export default class HomeScreen extends Component {
     return (
       <div>
         <Frame
+          type="WEATHER"
           content={
             !!this.state.weatherIcon && (
               <img
@@ -47,6 +51,7 @@ export default class HomeScreen extends Component {
           data={this.state.weatherData}
         />
         <Frame
+          type="CALCULATOR"
           content={
             !!this.state.weatherIcon && (
               <img
