@@ -52,7 +52,7 @@ export default function Frame({ content, data, type }) {
 
         </div>
       ) : (
-        <div>CALCULATOR{nav}</div>
+        <div>CALCULATOR</div>
       )}
     </div>
   );

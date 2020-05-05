@@ -35,11 +35,7 @@ export default class HomeScreen extends Component {
             name: data.name,
           });
         });
-    } else {
-      console.log("ssss");
-      alert("PLEASE ENABLE YOUR LOCATION");
-    }
-  }
+    } 
   render() {
     return (
       <div>
