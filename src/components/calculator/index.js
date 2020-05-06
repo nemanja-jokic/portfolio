@@ -12,10 +12,11 @@ export default class Calculator extends Component {
   }
 
   input = (e) => {
-    console.log(`${this.state.result}`.match(/[x]|[+]|[-]|[/]$/));
-    let last = `${this.state.result}`.match(/[x]|[+]|[-]|[/]$/);
-    if (!!e.target.id.match(/[x]|[+]|[-]|[/]/g)) {
-      if (last) {
+    let last = `${this.state.result}`[`${this.state.result}`.length - 1].match(
+      /[x]|[+]|[-]|[/]/
+    );
+    if (!!e.target.id.match(/[x]|[+]|[-]|[/]/)) {
+      if (!last) {
         console.log("ok");
       }
     }
