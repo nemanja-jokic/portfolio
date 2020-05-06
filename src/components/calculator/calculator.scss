@@ -1,0 +1,60 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  &-command {
+    display: flex;
+    background: greenyellow;
+    .button {
+      width: 33%;
+    }
+  }
+  &-display {
+    text-align: right;
+    background: grey;
+    padding-right: 1px;
+  }
+  &-buttons {
+    display: flex;
+
+    &-numbers {
+      flex: 3;
+      display: flex;
+      flex-wrap: wrap;
+      .button {
+        background: red;
+        width: 32%;
+        padding: 3%;
+      }
+    }
+    &-operations {
+      flex: 1;
+      .button {
+        background: rgb(0, 255, 13);
+
+        height: 25%;
+      }
+    }
+  }
+}
+.zero {
+  display: flex;
+  justify-content: center;
+  background: red;
+  align-items: center;
+  width: 96%;
+  padding: 3%;
+  &:hover {
+    background: orange;
+  }
+}
+.button {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
+  &:hover {
+    background: orange;
+  }
+}

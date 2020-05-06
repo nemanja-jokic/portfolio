@@ -1,5 +1,6 @@
 import React from "react";
 import img from "../image/location.png";
+import Calculator from "./calculator";
 
 export default function Frame({ content, data, type, nav }) {
   console.log(data);
@@ -65,12 +66,14 @@ export default function Frame({ content, data, type, nav }) {
           )}
         </div>
       ) : type === "CALCULATOR" ? (
-        <div>CALCULATOR</div>
+        <div>
+          <Calculator />
+        </div>
       ) : (
         <div>TODO_LIST</div>
       )}
 
-      <div className="like-place">HERE ARE PLACE FOR LIKE</div>
+      <div className="like-place">this is -- PLACE FOR LIKE</div>
     </div>
   );
 }
