@@ -15,11 +15,7 @@ export default class Calculator extends Component {
     let last = `${this.state.result}`[`${this.state.result}`.length - 1].match(
       /[x]|[+]|[-]|[/]/
     );
-    if (!!e.target.id.match(/[x]|[+]|[-]|[/]/)) {
-      if (!last) {
-        console.log("ok");
-      }
-    }
+
     if (e.target.id === "C" && this.state.result.length > 1) {
       this.setState({
         result: this.state.result.slice(0, this.state.result.length - 1),
@@ -33,6 +29,10 @@ export default class Calculator extends Component {
             ? "0"
             : e.target.id,
       });
+    } else if (e.target.title === "operation" && last) {
+      this.setState({
+        result: this.state.result,
+      });
     } else {
       if (e.target.id === "C") {
         this.setState({
@@ -40,7 +40,7 @@ export default class Calculator extends Component {
         });
       } else {
         this.setState({
-          result: [...this.state.result, e.target.id],
+          result: this.state.result + e.target.id,
         });
       }
     }
