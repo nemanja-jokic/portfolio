@@ -1,6 +1,7 @@
 import React from "react";
 import img from "../image/location.png";
 import Calculator from "./calculator";
+import TodoApp from "./todo";
 
 export default function Frame({ content, data, type, nav }) {
   console.log(data);
@@ -70,7 +71,9 @@ export default function Frame({ content, data, type, nav }) {
           <Calculator />
         </div>
       ) : (
-        <div>TODO_LIST</div>
+        <div>
+          <TodoApp />
+        </div>
       )}
 
       <div className="like-place">this is -- PLACE FOR LIKE</div>
