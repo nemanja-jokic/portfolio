@@ -11,17 +11,25 @@ export default class Calculator extends Component {
   }
   input = (e) => {
     console.log(this.state.result, e.target.id);
-    if (this.state.result === "0") {
-      this.setState({ result: e.target.id });
-    }
-    if (e.target.id === "C") {
+
+    if (e.target.id === "C" && this.state.result.length > 1) {
       this.setState({
         result: this.state.result.slice(0, this.state.result.length - 1),
       });
     } else if (e.target.id === "DEL") {
       this.setState({ result: "0" });
+    } else if (this.state.result === "0") {
+      this.setState({ result: e.target.id === "C" ? "0" : e.target.id });
     } else {
-      this.setState({ result: [...this.state.result, e.target.id] });
+      if (e.target.id === "C") {
+        this.setState({
+          result: "0",
+        });
+      } else {
+        this.setState({
+          result: [...this.state.result, e.target.id],
+        });
+      }
     }
   };
 
