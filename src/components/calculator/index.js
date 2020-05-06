@@ -7,11 +7,18 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       result: "0",
+      operationArray: [],
     };
   }
-  input = (e) => {
-    console.log(this.state.result, e.target.id);
 
+  input = (e) => {
+    console.log(`${this.state.result}`.match(/[x]|[+]|[-]|[/]$/));
+    let last = `${this.state.result}`.match(/[x]|[+]|[-]|[/]$/);
+    if (!!e.target.id.match(/[x]|[+]|[-]|[/]/g)) {
+      if (last) {
+        console.log("ok");
+      }
+    }
     if (e.target.id === "C" && this.state.result.length > 1) {
       this.setState({
         result: this.state.result.slice(0, this.state.result.length - 1),
@@ -19,7 +26,12 @@ export default class Calculator extends Component {
     } else if (e.target.id === "DEL") {
       this.setState({ result: "0" });
     } else if (this.state.result === "0") {
-      this.setState({ result: e.target.id === "C" ? "0" : e.target.id });
+      this.setState({
+        result:
+          e.target.id === "C" || /[x]|[+]|[-]|[/]/.test(e.target.id)
+            ? "0"
+            : e.target.id,
+      });
     } else {
       if (e.target.id === "C") {
         this.setState({
@@ -57,7 +69,12 @@ export default class Calculator extends Component {
           </div>
           <div className="calculator-buttons-operations">
             {operations.map((operation) => (
-              <Button tone={"button"} input={this.input} id={operation} />
+              <Button
+                tone={"button"}
+                sign={"operation"}
+                input={this.input}
+                id={operation}
+              />
             ))}
           </div>
         </div>
