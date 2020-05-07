@@ -6,12 +6,15 @@
 
   &-command {
     display: flex;
-    background: greenyellow;
+    background: rgb(216, 255, 156);
     margin: 3px 0;
 
     .button {
       flex-basis: 33.5%;
       padding: 6px 0;
+      &:hover {
+        background: rgb(148, 252, 116);
+      }
     }
   }
   &-display {
@@ -28,7 +31,7 @@
       flex-wrap: wrap;
 
       .button {
-        background: red;
+        background: #ff7272;
         width: 32.5%;
         padding: 10px;
         border: 1px solid black;
@@ -41,10 +44,13 @@
       flex-direction: column;
 
       .button {
-        background: rgb(0, 255, 13);
+        background: #82f388;
         border: 1px solid black;
         margin-bottom: 1px;
         padding: 10px;
+        &:hover {
+          background: #67be6b;
+        }
       }
     }
   }
@@ -52,13 +58,13 @@
 .zero {
   display: flex;
   justify-content: center;
-  background: red;
+  background: #ff7272;
   align-items: center;
   width: 98%;
   padding: 10px;
   border: 1px solid black;
   &:hover {
-    background: orange;
+    background: #ff9f72;
   }
 }
 .button {
@@ -68,6 +74,6 @@
   justify-content: center;
 
   &:hover {
-    background: orange;
+    background: #ff9f72;
   }
 }
