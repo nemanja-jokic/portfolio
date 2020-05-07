@@ -26,9 +26,8 @@
 }
 .modal-header,
 .modal-footer {
-  background: #007bff;
   padding: 10px;
-  color: #fff;
+  color: #e91e63ff;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -58,5 +57,10 @@
   }
   to {
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .modal-content {
+    width: 95%;
   }
 }
