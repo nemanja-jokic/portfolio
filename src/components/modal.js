@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./button.js";
 
 // export default function Modal({ removeModal }) {
 export default class Modal extends React.Component {
@@ -7,10 +8,8 @@ export default class Modal extends React.Component {
       <div id="modal">
         <div className="modal-content">
           <div className="modal-header">
-            <h3>GREETING</h3>
-            <p id="close" onClick={this.props.removeModal}>
-              X
-            </p>
+            <h3>GREETINGS</h3>
+            <Button id="close" onClick={this.props.removeModal} />
           </div>
           <div className="modal-body">
             <p>Ovo je nas modal</p>

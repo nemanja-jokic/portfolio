@@ -75,7 +75,7 @@ export default function Frame({ content, data, type, nav }) {
         </div>
       )}
 
-      <div className="like-place">this is -- {type}</div>
+      <div className="like-place"> {type}</div>
     </div>
   );
 }

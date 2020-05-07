@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -31,18 +31,15 @@ export default class Nav extends React.Component {
         <nav id="nav">
           <ul>
             <li>
-              <a onClick={this.redirecting} id="home">
-                HOME
-              </a>
+              <Link to={"/home"}>HOME</Link>
             </li>
             <li>
-              <a href="#">ABOUT</a>
+              <Link to={"/about"}>ABOUT</Link>
             </li>
             <li>
-              <a href="#">CONTACT</a>
+              <Link to={"/contact"}>CONTACT</Link>
             </li>
           </ul>
-          {/* <a href="#" id="respmenu" class="button"><i class="fa fa-lg fa-navicon"></i>&nbsp;&nbsp;&nbsp;&nbsp;Navigation</a> */}
         </nav>
       </div>
     );

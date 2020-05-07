@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Button from "./button.js";
+import Button from "../button.js";
 import "./calculator.scss";
 
 export default class Calculator extends Component {
