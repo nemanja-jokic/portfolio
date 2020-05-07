@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function Button({ id, tone, input, sign }) {
+export default function Button({ id, tone, onClick, sign }) {
   return (
-    <div onClick={input} id={id} title={sign} className={tone}>
+    <div onClick={onClick} id={id} title={sign} className={tone}>
       {id}
     </div>
   );

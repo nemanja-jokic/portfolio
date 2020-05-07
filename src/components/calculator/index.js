@@ -84,14 +84,14 @@ export default class Calculator extends Component {
         <div className="calculator-display">{this.state.result}</div>
         <div className="calculator-command">
           {command.map((com) => (
-            <Button input={this.input} id={com} tone={"button"} />
+            <Button onClick={this.input} id={com} tone={"button"} />
           ))}
         </div>
         <div className="calculator-buttons">
           <div className="calculator-buttons-numbers">
             {numbers.map((number) => (
               <Button
-                input={this.input}
+                onClick={this.input}
                 id={number}
                 tone={number === 0 ? "zero" : "button"}
               />
@@ -102,7 +102,7 @@ export default class Calculator extends Component {
               <Button
                 tone={"button"}
                 sign={"operation"}
-                input={this.input}
+                onClick={this.input}
                 id={operation}
               />
             ))}

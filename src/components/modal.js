@@ -7,7 +7,7 @@ export default class Modal extends React.Component {
       <div id="modal">
         <div className="modal-content">
           <div className="modal-header">
-            <h3>Ovo je header modala</h3>
+            <h3>GREETING</h3>
             <p id="close" onClick={this.props.removeModal}>
               X
             </p>
