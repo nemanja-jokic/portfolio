@@ -66,7 +66,10 @@ export default class Calculator extends Component {
         });
       } else {
         this.setState({
-          result: this.state.result + e.target.id,
+          result:
+            last && e.target.id === "0"
+              ? this.state.result
+              : this.state.result + e.target.id,
         });
       }
     }

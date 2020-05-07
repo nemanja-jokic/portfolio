@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
     return (
       <div>
         <Frame
-          type="WEATHER"
+          type="REAL-TIME-WEATHER"
           content={
             !!this.state.weatherIcon && (
               <img

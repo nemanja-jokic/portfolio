@@ -32,7 +32,7 @@ export default function Frame({ content, data, type, nav }) {
   }
   return (
     <div className="frame">
-      {type === "WEATHER" ? (
+      {type === "REAL-TIME-WEATHER" ? (
         <div>
           {!!data.name ? (
             <div className="weather-wrapper">
@@ -75,7 +75,7 @@ export default function Frame({ content, data, type, nav }) {
         </div>
       )}
 
-      <div className="like-place">this is -- PLACE FOR LIKE</div>
+      <div className="like-place">this is -- {type}</div>
     </div>
   );
 }
