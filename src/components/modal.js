@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "./button.js";
 
-// export default function Modal({ removeModal }) {
 export default class Modal extends React.Component {
   render() {
     return (
@@ -9,13 +7,11 @@ export default class Modal extends React.Component {
         <div className="modal-content">
           <div className="modal-body">
             <div className="modal-header">
-              <div></div>
               <h3>GREETINGS</h3>
-              <Button id="close" onClick={this.props.removeModal} />
             </div>
             <p>My name is Nemanja</p>
             <p>
-              II’m an actor. I'm driving in a van with my fellow workers from
+              I’m an actor. I'm driving in a van with my fellow workers from
               school to school and performing puppet shows for children. I like
               that job. But a year ago my situation has changed and I was forced
               to stay almost all day at home. I was thinking: "What should I do
@@ -27,11 +23,16 @@ export default class Modal extends React.Component {
               interesting field, where you can express your creativity as well.
               Now I'm really excited about what I've learned. I'm 100% sure that
               I'm the right guy for this job, but I understand that this is just
-              the beginning. I want to show you what I've learned by now, in
-              these few lines of code which you're about to see...
+              the beginning. I want to show you just part of what I've learned
+              by now, in these few lines of code which you're about to see...
             </p>
             <div className="modal-footer">
-              <p onClick={this.props.removeModal}>This is my presentation</p>
+              <p
+                onClick={this.props.removeModal}
+                style={{ cursor: "pointer", margin: "0 auto 10px" }}
+              >
+                This is my presentation
+              </p>
             </div>
           </div>
         </div>

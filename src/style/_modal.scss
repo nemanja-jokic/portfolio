@@ -17,6 +17,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .modal-content {
@@ -29,10 +30,8 @@
 .modal-footer {
   padding: 10px;
   color: #e91e63ff;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  border-radius: 25px;
+
+  text-align: center;
 }
 #close {
   cursor: pointer;

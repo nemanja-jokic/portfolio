@@ -17,17 +17,8 @@ export default class Nav extends React.Component {
     return (
       <div className="nav-bar">
         {!!this.state.redirect && <Redirect to={this.state.redirect} />}
-        <div className="logo">Logo</div>
-        {/* <div onClick={this.redirecting} id="home" className="nav-bar-links">
-          HOME
-        </div>
+        <div className="logo"></div>
 
-        <div onClick={this.redirecting} id="about" className="nav-bar-links">
-         ABOUT 
-        </div>
-        <div onClick={this.redirecting} id="contact" className="nav-bar-links">
-          CONTACT 
-        </div> */}
         <nav id="nav">
           <ul>
             <li>

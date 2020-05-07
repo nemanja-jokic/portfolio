@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 20" width="140" height="23">
+	<defs>
+		<image width="120" height="20" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAAUAQMAAAB8nGuwAAAAAXNSR0IB2cksfwAAAANQTFRF////p8QbyAAAAA1JREFUeJxjYBgFlAAAAUAAAShavNYAAAAASUVORK5CYII="/>
+		<image width="8" height="11" id="img2" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAALAQMAAAB4VV5mAAAAAXNSR0IB2cksfwAAAAZQTFRFY6rIAAAAommF5QAAAAJ0Uk5T/wDltzBKAAAAF0lEQVR4nGNgZmBksABCRjBtA8QMDIwADDUBJNLrvx8AAAAASUVORK5CYII="/>
+		<image width="7" height="11" id="img3" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAQMAAACJXgXrAAAAAXNSR0IB2cksfwAAAAZQTFRF/NcDAAAA7ldsCgAAAAJ0Uk5T/wDltzBKAAAAEUlEQVR4nGNgAAI7IITRYBYADOwBN33kJqgAAAAASUVORK5CYII="/>
+		<image width="10" height="11" id="img4" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAALAQMAAAB8oI5bAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAAUUqYPFtBsQAAAAJ0Uk5TAP9bkSK1AAAAGklEQVR4nGOQb2Cwb2AoaGB4wICCCsDi8g0Ald0I/R0dm7sAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Background" href="#img1" x="10" y="-23" />
+	<use id="В " href="#img2" x="1" y="5" />
+	<use id="Е " href="#img3" x="10" y="5" />
+	<use id="С " href="#img4" x="18" y="5" />
+	<text id=" " style="transform: matrix(1,0,0,1,27,2)" >
+	</text>
+</svg>
