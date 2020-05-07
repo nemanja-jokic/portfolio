@@ -1,61 +1,62 @@
 #modal-btn {
-    background: dodgerblue;
-    padding: 10px;
-    color: #fff;
-    border: 0;
-    border-radius: 10px;
-    cursor: pointer;
+  background: dodgerblue;
+  padding: 10px;
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
 }
 #modal-btn:hover {
-    background-color: #4da6ff;
+  background-color: #4da6ff;
 }
 #modal {
-    background: rgba(0, 0, 0, .5);
-    height: 100%;
-    width: 100%;
-    overflow: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .modal-content {
-    margin: 20px auto;
-    width: 50%;
-    animation: openModal 2s;
+  margin: 20px auto;
+  width: 50%;
+  animation: openModal 2s;
 }
 .modal-header,
 .modal-footer {
-    background: #007bff;
-    padding: 10px;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    border-radius: 5px;
+  background: #007bff;
+  padding: 10px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-radius: 25px;
 }
 #close {
-    cursor: pointer;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    padding: 5px;
+  cursor: pointer;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 5px;
 }
 #close:hover {
-    background-color: #4da6ff;
+  background-color: #4da6ff;
 }
 .modal-body {
-    padding: 1px 10px;
-    background-color: #fff;
+  padding: 1px 10px;
+  background-color: #fff;
+  border-radius: 25px;
 }
 .modal-footer {
-    padding: 7px;
+  padding: 7px;
 }
 
 @keyframes openModal {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-} 
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
