@@ -12,26 +12,28 @@ export default class HomeScreen extends Component {
   componentDidMount() {
     const { lat, lon } = this.props;
     let weatherData = {};
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        weatherData.name = data.name;
-        weatherData.temp = data.main.temp;
-        weatherData.feels_like = data.main.feels_like;
-        weatherData.pressure = data.main.pressure;
-        weatherData.country = data.sys.country;
-        weatherData.description = data.weather[0].description;
-        weatherData.wind = data.wind.speed;
-        weatherData.humidity = data.main.humidity;
+    if (!!lat) {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          weatherData.name = data.name;
+          weatherData.temp = data.main.temp;
+          weatherData.feels_like = data.main.feels_like;
+          weatherData.pressure = data.main.pressure;
+          weatherData.country = data.sys.country;
+          weatherData.description = data.weather[0].description;
+          weatherData.wind = data.wind.speed;
+          weatherData.humidity = data.main.humidity;
 
-        this.setState({
-          weatherIcon: data.weather[0].icon,
-          weatherData: weatherData,
-          name: data.name,
+          this.setState({
+            weatherIcon: data.weather[0].icon,
+            weatherData: weatherData,
+            name: data.name,
+          });
         });
-      });
+    }
   }
 
   render() {
