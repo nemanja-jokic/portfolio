@@ -14,11 +14,9 @@ export default class HomeScreen extends Component {
     let weatherData = {};
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4a444aa745a6a69baa47f2380e6bf8ea`
-      // `https://api.openweathermap.org/data/2.5/weather?lat=44.75&lon=20.48&appid=4a444aa745a6a69baa47f2380e6bf8ea`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         weatherData.name = data.name;
         weatherData.temp = data.main.temp;
         weatherData.feels_like = data.main.feels_like;

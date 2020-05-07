@@ -15,11 +15,29 @@ export default class Calculator extends Component {
     let last = `${this.state.result}`[`${this.state.result}`.length - 1].match(
       /[x]|[+]|[-]|[/]/
     );
-
+    if (this.state.calculator === false) {
+      this.setState({
+        result: e.target.i,
+      });
+    }
     if (e.target.id === "C" && this.state.result.length > 1) {
       this.setState({
         result: this.state.result.slice(0, this.state.result.length - 1),
       });
+    } else if (e.target.id === "=") {
+      if (!last) {
+        let sum = `${this.state.result}`.match(/[x]/g)
+          ? this.state.result.replace(/x/g, "*")
+          : `${this.state.result}`;
+        this.setState({
+          result: eval(sum),
+          calculator: false,
+        });
+      } else {
+        this.setState({
+          result: this.state.result,
+        });
+      }
     } else if (e.target.id === "DEL") {
       this.setState({ result: "0" });
     } else if (this.state.result === "0") {
@@ -31,12 +49,20 @@ export default class Calculator extends Component {
       });
     } else if (e.target.title === "operation" && last) {
       this.setState({
-        result: this.state.result,
+        result: this.state.result.replace(last, e.target.id),
       });
     } else {
       if (e.target.id === "C") {
         this.setState({
           result: "0",
+        });
+      } else if (
+        this.state.calculator === false &&
+        e.target.title !== "operation"
+      ) {
+        this.setState({
+          result: e.target.id,
+          calculator: true,
         });
       } else {
         this.setState({

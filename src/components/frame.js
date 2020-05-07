@@ -3,7 +3,6 @@ import img from "../image/location.png";
 import Calculator from "./calculator";
 
 export default function Frame({ content, data, type, nav }) {
-  console.log(data);
   var day = new Date().getDay();
   switch (day) {
     case 0:
