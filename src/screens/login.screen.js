@@ -38,7 +38,7 @@ class LoginScreen extends Component {
             <input type="password" placeholder="Password" id="password" />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <div className="snaga-sifre">
+            <div className="pasword-strength">
               <div id="traka"></div>
             </div>
             <p id="text">Upozorenje! CAPS LOCK je ukljucen.</p>
