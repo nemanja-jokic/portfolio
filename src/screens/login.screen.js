@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import Button from "../Button.js";
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -10,8 +11,10 @@ class LoginScreen extends Component {
       email: "",
       password: "",
       password2: "",
-      error: "",
-      success: "",
+      error: "error",
+      success: "success",
+      errorMessage: "",
+      succesMessage: "",
     };
   }
 
@@ -20,35 +23,33 @@ class LoginScreen extends Component {
       [e.target.name]: e.target.value,
     });
   };
+  errorHandler = (error, errorMessage) => {
+    this.setState({
+      error,
+      errorMessage,
+    });
+  };
   checkInputs = (e) => {
     e.preventDefault();
-    const { username, email, password, password2 } = this.state;
+    const { username, email, password, password2, error, success } = this.state;
 
     if (username === "") {
-      this.setState({
-        error: "Username ne sme da bude prazan.",
-      });
+      this.errorHandler(error, "Please, enter your name.");
     } else if (username.length < 4) {
-      this.setState({
-        error: "error",
-        // error: 'Nije dozvoljeno ispod 4 karaktera.'
-      });
+      this.errorHandler(
+        error,
+        "Username must be at least  5 character in length."
+      );
     } else if (
       username.search(/[!|@|#|$|%|^|&| |'|"|`|(|)|<||||/|>|+|*|/|,|:|;]/) !== -1
     ) {
-      this.setState({
-        error: "error",
-        // error: 'Nisu dozvoljeni specijalni karakteri.'
-      });
+      this.errorHandler(error, "Special characters not allowed.");
     } else if (username.length > 20) {
-      this.setState({
-        error: "error",
-        // error: 'Nije dozvoljeno iznad 20 karaktera.'
-      });
+      this.errorHandler(error, "Not allowed more then 20 characters.");
     } else {
       // this.success(username);
       console.log("Bravoooo");
-      // this.props.submit();
+      //  this.props.submit();
       // a = true;
     }
 
@@ -114,13 +115,15 @@ class LoginScreen extends Component {
   };
 
   render() {
-    const { error, success } = this.state;
+    const { error, success, errorMessage } = this.state;
 
     return (
       <div id="login-container">
         {this.state.redirect && <Redirect to={this.state.redirect} />}
         <div className="header">
-          <h2>Create Account</h2>
+          <h2>
+            Create Account <Button />{" "}
+          </h2>
         </div>
 
         <form id="form" className="form">
@@ -151,7 +154,7 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small>{errorMessage}</small>
           </div>
 
           <div className={`${error} ${success} form-control`}>
