@@ -10,8 +10,10 @@ class LoginScreen extends Component {
       email: "",
       password: "",
       password2: "",
-      error: "",
-      success: "",
+      error: "error",
+      success: "success",
+      errorMessage: "",
+      succesMessage: "",
     };
   }
 
@@ -22,33 +24,34 @@ class LoginScreen extends Component {
   };
   checkInputs = (e) => {
     e.preventDefault();
-    const { username, email, password, password2 } = this.state;
+    const { username, email, password, password2, error, success } = this.state;
 
     if (username === "") {
       this.setState({
-        error: "Username ne sme da bude prazan.",
+        errorMessage: "Please, enter your name.",
+        error,
       });
     } else if (username.length < 4) {
       this.setState({
-        error: "error",
-        // error: 'Nije dozvoljeno ispod 4 karaktera.'
+        error,
+        errorMessage: "Username must be at least  5 character in length.",
       });
     } else if (
       username.search(/[!|@|#|$|%|^|&| |'|"|`|(|)|<||||/|>|+|*|/|,|:|;]/) !== -1
     ) {
       this.setState({
-        error: "error",
-        // error: 'Nisu dozvoljeni specijalni karakteri.'
+        error,
+        errorMessage: "Special characters not allowed.",
       });
     } else if (username.length > 20) {
       this.setState({
-        error: "error",
-        // error: 'Nije dozvoljeno iznad 20 karaktera.'
+        error,
+        errorMessage: "Not allowed more then 20 characters.",
       });
     } else {
       // this.success(username);
       console.log("Bravoooo");
-      // this.props.submit();
+      //  this.props.submit();
       // a = true;
     }
 
@@ -114,7 +117,7 @@ class LoginScreen extends Component {
   };
 
   render() {
-    const { error, success } = this.state;
+    const { error, success, errorMessage } = this.state;
 
     return (
       <div id="login-container">
@@ -151,7 +154,7 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small>{errorMessage}</small>
           </div>
 
           <div className={`${error} ${success} form-control`}>
