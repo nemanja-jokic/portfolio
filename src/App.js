@@ -37,15 +37,16 @@ class App extends React.Component {
       <div className="App">
         <Router>
           {this.state.redirect && <Redirect to={this.state.redirect} />}
-          {!!this.state.modal && (
-            <Modal
-              removeModal={() => this.setState({ modal: false, redirect: "/" })}
-            />
-          )}
-          {!!this.state.entrySucces && <Nav />}
+          {/*
+             <Modal
+               removeModal={() => this.setState({ modal: false, redirect: "/" })}
+             />
+             */}
+          
+          <Nav />
           <Switch>
             <Route exact path="/">
-              {!this.state.modal && !!this.state.loginScreen && (
+              
                 <LoginScreen
                   modal={this.state.modal}
                   submit={() =>
@@ -56,10 +57,9 @@ class App extends React.Component {
                     })
                   }
                 />
-              )}
+              
             </Route>
-            {!!this.state.entrySucces && (
-              <>
+           
                 <Route exact path="/home">
                   <HomeScreen lat={lat} lon={lon} />
                 </Route>
@@ -69,8 +69,7 @@ class App extends React.Component {
                 <Route exact path="/contact">
                   <ContactScreen />
                 </Route>
-              </>
-            )}
+              
           </Switch>
         </Router>
       </div>
