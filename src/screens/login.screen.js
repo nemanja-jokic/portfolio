@@ -10,7 +10,7 @@ class LoginScreen extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div id="login-container">
         {this.state.redirect && <Redirect to={this.state.redirect} />}
         <div className="header">
           <h2>Create Account</h2>
@@ -35,11 +35,7 @@ class LoginScreen extends Component {
 
           <div className="form-control">
             <label for="password">Password</label>
-            <input
-              type="password"
-              placeholder="Password"
-              id="password"
-            />
+            <input type="password" placeholder="Password" id="password" />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
             <div className="snaga-sifre">

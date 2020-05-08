@@ -1,14 +1,3 @@
-#modal-btn {
-  background: dodgerblue;
-  padding: 10px;
-  color: #fff;
-  border: 0;
-  border-radius: 10px;
-  cursor: pointer;
-}
-#modal-btn:hover {
-  background-color: #4da6ff;
-}
 #modal {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
@@ -18,48 +7,44 @@
   top: 0;
   left: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
 
-.modal-content {
-  margin: 20px auto 40px;
-  width: 80%;
-  animation: openModal 2s;
-  text-align: justify;
-}
+  .modal-content {
+    margin: 20px auto 40px;
+    width: 80%;
+    animation: openModal 2s;
+    text-align: justify;
 
-.modal-header,
-.modal-footer {
-  color: #e91e63ff;
-  text-align: center;
-}
-.text {
-  font-family: "Courgette", sans-serif;
-  font-size: 20px;
-  font-weight: 900;
-  padding: 0 20px;
-}
-#close {
-  cursor: pointer;
+    .modal-body {
+      padding: 1px 10px;
+      background-color: #fff;
+      border-radius: 25px;
 
-  padding: 5px;
-}
-#close:hover {
-  color: #4da6ff;
-}
-.modal-body {
-  padding: 1px 10px;
-  background-color: #fff;
-  border-radius: 25px;
-}
-.modal-footer {
-  padding: 7px;
-  margin-top: 20px;
-  p {
-    transition: 0.5s all;
-    font-size: 20px;
-  }
-  p:hover {
-    color: rgb(159, 30, 233);
+      .modal-header,
+      .modal-footer {
+        color: #e91e63ff;
+        text-align: center;
+      }
+
+      .text {
+        font-family: "Domine", sans-serif;
+        font-size: 20px;
+
+        padding: 0 20px;
+      }
+
+      .modal-footer {
+        padding: 7px;
+        margin-top: 20px;
+        position: relative;
+        p {
+          transition: s all;
+          font-size: 20px;
+        }
+        p:hover {
+          color: rgb(159, 30, 233);
+        }
+      }
+    }
   }
 }
 
