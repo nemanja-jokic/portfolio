@@ -26,9 +26,9 @@
   animation: openModal 2s;
   text-align: justify;
 }
+
 .modal-header,
 .modal-footer {
-  padding: 10px;
   color: #e91e63ff;
   text-align: center;
 }
@@ -54,6 +54,13 @@
 .modal-footer {
   padding: 7px;
   margin-top: 20px;
+  p {
+    transition: 0.5s all;
+    font-size: 20px;
+  }
+  p:hover {
+    color: rgb(159, 30, 233);
+  }
 }
 
 @keyframes openModal {

@@ -7,7 +7,7 @@ export default class Modal extends React.Component {
         <div className="modal-content">
           <div className="modal-body">
             <div className="modal-header">
-              <h3>GREETINGS</h3>
+              <h2>GREETINGS</h2>
             </div>
             <p className="text">My name is Nemanja</p>
             <p className="text">
