@@ -48,7 +48,7 @@ class LoginScreen extends Component {
     } else {
       // this.success(username);
       console.log("Bravoooo");
-      this.props.submit();
+      // this.props.submit();
       // a = true;
     }
 
