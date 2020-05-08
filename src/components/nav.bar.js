@@ -1,5 +1,6 @@
 import React from "react";
-import { Redirect, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import Logo from "./logoVeselaTipca.png";
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -9,15 +10,16 @@ export default class Nav extends React.Component {
     };
   }
   redirecting = (e) => {
-    this.setState({
-      redirect: `/${e.target.id}`,
-    });
+    this.setState({});
   };
   render() {
     return (
       <div className="nav-bar">
-        {!!this.state.redirect && <Redirect to={this.state.redirect} />}
-        <div className="logo"></div>
+        <div className="logo">
+          <Link to={"/home"}>
+            <img style={{ width: "85px" }} src={Logo} alt="logo" />
+          </Link>
+        </div>
 
         <nav id="nav">
           <ul>
