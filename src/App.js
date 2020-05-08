@@ -18,10 +18,7 @@ import ContactScreen from "./screens/contact.screen";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      modal: true,
-      loginScreen: true,
-    };
+    this.state = { redirect: "/" };
   }
   componentDidMount() {
     navigator.geolocation.getCurrentPosition((position) =>
@@ -37,29 +34,30 @@ class App extends React.Component {
       <div className="App">
         <Router>
           {this.state.redirect && <Redirect to={this.state.redirect} />}
-          {/*
-             <Modal
-               removeModal={() => this.setState({ modal: false, redirect: "/" })}
-             />
-             */}
-          
-          <Nav />
+
           <Switch>
             <Route exact path="/">
-              
-                <LoginScreen
-                  modal={this.state.modal}
-                  submit={() =>
-                    this.setState({
-                      entrySucces: true,
-                      loginScreen: false,
-                      redirect: "/home",
-                    })
-                  }
-                />
-              
+              <Modal
+                removeModal={() =>
+                  this.setState({ modal: false, redirect: "/login" })
+                }
+              />
             </Route>
-           
+            <Route exact path="/login">
+              <LoginScreen
+                modal={this.state.modal}
+                submit={() =>
+                  this.setState({
+                    entrySucces: true,
+
+                    redirect: "/home",
+                  })
+                }
+              />
+            </Route>
+            {!!this.state.entrySucces && (
+              <>
+                <Nav />
                 <Route exact path="/home">
                   <HomeScreen lat={lat} lon={lon} />
                 </Route>
@@ -69,7 +67,8 @@ class App extends React.Component {
                 <Route exact path="/contact">
                   <ContactScreen />
                 </Route>
-              
+              </>
+            )}
           </Switch>
         </Router>
       </div>
