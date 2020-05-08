@@ -10,7 +10,8 @@
 
   .modal-content {
     margin: 20px auto 40px;
-    width: 80%;
+    max-width: 800px;
+    width: 95%;
     animation: openModal 2s;
     text-align: justify;
 
@@ -54,10 +55,5 @@
   }
   to {
     opacity: 1;
-  }
-}
-@media only screen and (max-width: 1140px) {
-  .modal-content {
-    width: 95%;
   }
 }
