@@ -16,17 +16,19 @@
     display: flex;
     justify-content: space-between;
     .arrow-button {
+      font-size: 13px;
+      padding: 5px 10px;
       cursor: pointer;
-      .alert-message {
-        display: none;
-        position: absolute;
-        right: 10px;
-        top: 5px;
-      }
+      text-align: center;
+      background-color: #ff9900;
+      border: 2px solid #b36b00;
+      border-radius: 4px;
+      color: #fff;
+      display: block;
+
       &:hover {
-        .alert-message {
-          display: block;
-        }
+        background-color: #ffd493;
+        color: brown;
       }
     }
 

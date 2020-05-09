@@ -61,9 +61,7 @@ export default function Frame({ content, data, type }) {
               </div>
             </div>
           ) : (
-            <div>
-              <img className="location-img" src={img} alt="allow location" />
-            </div>
+            <div></div>
           )}
         </div>
       ) : type === "CALCULATOR" ? (

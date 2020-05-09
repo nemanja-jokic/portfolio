@@ -11,7 +11,6 @@ class LoginScreen extends Component {
       email: "",
       password: "",
       password2: "",
-
     };
   }
 
@@ -120,7 +119,6 @@ class LoginScreen extends Component {
   };
 
   render() {
-
     const {
       userNameAlertMessage,
       emailAlertMessage,
@@ -132,17 +130,15 @@ class LoginScreen extends Component {
       paswordCheckAlert,
     } = this.state;
 
-
     return (
       <div id="login-container">
         {this.state.redirect && <Redirect to={this.state.redirect} />}
         <div className="header">
           <h2>Create Account</h2>
           <Button
-            alert={true}
             tone="arrow-button"
             onClick={this.props.submit}
-            id={">>>"}
+            id={"SKIP >>"}
           />
         </div>
 
@@ -176,7 +172,6 @@ class LoginScreen extends Component {
             <i className="fa fa-exclamation-circle"></i>
 
             <small>{emailAlertMessage}</small>
-
           </div>
 
           <div className={`${passwordAlert} form-control`}>

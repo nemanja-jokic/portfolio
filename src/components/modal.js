@@ -21,11 +21,11 @@ export default class Modal extends React.Component {
               whether I'm smart enough. But I really wanted to try. So I started
               leaning to code on the internet... Over time I found coding a
               really interesting field, where you can express your creativity as
-              well. Now I'm really excited about what I've learned. I'm 100%
-              sure that I'm the right guy for this job, but I understand that
-              this is just the beginning. I want to show you just part of what
-              I've learned by now, in these few lines of code which you're about
-              to see...
+              well. Now I'm really excited about what I've learned and I'm sure
+              that I'm the right guy for this job, but I understand that this is
+              just the beginning. I want to show you just part of what I've
+              learned by now, in these few lines of code which you're about to
+              see...
             </p>
             <div className="modal-footer">
               <p
