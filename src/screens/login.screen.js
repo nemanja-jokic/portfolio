@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import Button from "../Button.js";
+import Button from "../components/button.js";
 
 class LoginScreen extends Component {
   constructor(props) {
@@ -11,10 +11,6 @@ class LoginScreen extends Component {
       email: "",
       password: "",
       password2: "",
-      error: "error",
-      success: "success",
-      errorMessage: "",
-      succesMessage: "",
     };
   }
 
@@ -23,41 +19,61 @@ class LoginScreen extends Component {
       [e.target.name]: e.target.value,
     });
   };
-  errorHandler = (error, errorMessage) => {
+
+  UserNameHandler = (userNameAlert, userNameAlertMessage) => {
     this.setState({
-      error,
-      errorMessage,
+      userNameAlertMessage,
+      userNameAlert,
+    });
+  };
+
+  emailHandler = (emailAlert, emailAlertMessage) => {
+    this.setState({
+      emailAlertMessage,
+      emailAlert,
+    });
+  };
+
+  passwordHandler = (passwordAlert, passwordAlertMessage) => {
+    this.setState({
+      passwordAlertMessage,
+      passwordAlert,
+    });
+  };
+  paswordCheckHandler = (paswordCheckAlert, paswordCheckAlertMessage) => {
+    this.setState({
+      paswordCheckAlertMessage,
+      paswordCheckAlert,
     });
   };
   checkInputs = (e) => {
     e.preventDefault();
-    const { username, email, password, password2, error, success } = this.state;
+    const alert = "error";
+
+    const { username, email, password, password2 } = this.state;
 
     if (username === "") {
-      this.errorHandler(error, "Please, enter your name.");
+      this.UserNameHandler(alert, "Please, enter your name.");
     } else if (username.length < 4) {
-      this.errorHandler(
-        error,
+      this.UserNameHandler(
+        alert,
         "Username must be at least  5 character in length."
       );
     } else if (
       username.search(/[!|@|#|$|%|^|&| |'|"|`|(|)|<||||/|>|+|*|/|,|:|;]/) !== -1
     ) {
-      this.errorHandler(error, "Special characters not allowed.");
+      this.UserNameHandler(alert, "Special characters not allowed.");
     } else if (username.length > 20) {
-      this.errorHandler(error, "Not allowed more then 20 characters.");
+      this.UserNameHandler(alert, "Not allowed more then 20 characters.");
     } else {
       // this.success(username);
-      console.log("Bravoooo");
+      this.UserNameHandler("success", "");
       //  this.props.submit();
       // a = true;
     }
 
     if (email === "") {
-      this.setState({
-        error: "error",
-        // error: 'Email ne sme da bude prazan.'
-      });
+      this.emailHandler(alert, "Email can't be empty");
     }
     // else if(!proveriEmail(email)) {
     //     this.setState({
@@ -66,68 +82,67 @@ class LoginScreen extends Component {
     //     })
     // }
     else {
+      this.emailHandler("success", "Email can't be empty");
       // uspesno(email);
     }
 
     if (password.length < 8) {
-      this.setState({
-        error: "error",
-        // error: 'Password ne sme biti ispod 8 karaktera.'
-      });
+      this.passwordHandler(alert, "Password must be 8 characters at least");
     } else if (password.search(/[0-9]/) === -1) {
-      this.setState({
-        error: "error",
-        // error: 'Password mora imati bar jedan broj.'
-      });
+      this.passwordHandler(alert, "Password must have at least one number");
     } else if (password.search(/[A-Z]/) === -1) {
-      this.setState({
-        error: "error",
-        // error: 'Password mora imati bar jedno veliko slovo.'
-      });
+      this.passwordHandler(
+        alert,
+        "Password must have at least one capital letter"
+      );
     } else if (
       password.search(/[!|@|#|$|%|^|&|(|)|_|+|*|-|/|.|,|:|;]/) === -1
     ) {
-      this.setState({
-        error: "error",
-        // error: 'Password mora imati bar jedan specijalan karakter.'
-      });
+      this.passwordHandler(
+        alert,
+        "Password must have at least one special character"
+      );
     } else if (password.search(/[(|)|.|-]/) !== -1) {
-      this.setState({
-        error: "error",
-        // error: 'Password ne sme imati (, ), . i -..'
-      });
+      this.passwordHandler(alert, "Password must not have (, ), . and -.");
     } else {
-      // uspesno(password);
+      this.passwordHandler("success", "");
     }
     if (password2 === "") {
-      this.setState({
-        error: "error",
-        // error: 'Password dva ne sme biti prazan.'
-      });
+      this.paswordCheckHandler(alert, "Please, enter your password");
     } else if (password !== password2) {
-      this.setState({
-        error: "error",
-        // error: 'Sifre se ne podudaraju.'
-      });
+      this.passwordHandler(alert, "Password don't match");
     } else {
-      // uspesno(password2);
+      this.passwordHandler("success", "");
     }
   };
 
   render() {
-    const { error, success, errorMessage } = this.state;
+    const {
+      userNameAlertMessage,
+      emailAlertMessage,
+      passwordAlertMessage,
+      paswordCheckAlertMessage,
+      userNameAlert,
+      emailAlert,
+      passwordAlert,
+      paswordCheckAlert,
+    } = this.state;
 
     return (
       <div id="login-container">
         {this.state.redirect && <Redirect to={this.state.redirect} />}
         <div className="header">
-          <h2>
-            Create Account <Button />{" "}
-          </h2>
+          <h2>Create Account</h2>
+          <Button
+            alert={true}
+            tone="arrow-button"
+            onClick={this.props.submit}
+            id={">>>"}
+          />
         </div>
 
         <form id="form" className="form">
-          <div className={`${error} ${success} form-control`}>
+          <div className={`${userNameAlert}  form-control`}>
             <label>Username</label>
             <input
               type="text"
@@ -139,10 +154,10 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <small>Error message 1</small>
+            <small>{userNameAlertMessage}</small>
           </div>
 
-          <div className={`${error} ${success} form-control`}>
+          <div className={`${emailAlert} form-control`}>
             <label>Email</label>
             <input
               type="email"
@@ -154,10 +169,10 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <small>{errorMessage}</small>
+            <small>{emailAlertMessage}</small>
           </div>
 
-          <div className={`${error} ${success} form-control`}>
+          <div className={`${passwordAlert} form-control`}>
             <label>Password</label>
             <input
               type="password"
@@ -173,10 +188,10 @@ class LoginScreen extends Component {
               <div id="traka"></div>
             </div>
             <p id="text">Upozorenje! CAPS LOCK je ukljucen.</p>
-            <small>Error message</small>
+            <small>{passwordAlertMessage}</small>
           </div>
 
-          <div className={`${error} ${success} form-control`}>
+          <div className={`${paswordCheckAlert} form-control`}>
             <label>Password check</label>
             <input
               type="password"
@@ -188,7 +203,7 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
-            <small>Error message</small>
+            <small>{paswordCheckAlertMessage}</small>
           </div>
 
           {/* <input type="submit" value="Submit" onClick={this.props.submit} /> */}

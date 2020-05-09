@@ -30,11 +30,12 @@ class App extends React.Component {
   }
   render() {
     const { lat, lon } = this.state;
+    console.log("APP -- ", lat, lon);
     return (
       <div className="App">
         <Router>
           {this.state.redirect && <Redirect to={this.state.redirect} />}
-
+          {!!this.state.entrySucces && <Nav />}
           <Switch>
             <Route exact path="/">
               <Modal
@@ -55,19 +56,18 @@ class App extends React.Component {
                 }
               />
             </Route>
-            {!!this.state.entrySucces && (
-              <>
-                <Nav />
-                <Route exact path="/home">
-                  <HomeScreen lat={lat} lon={lon} />
-                </Route>
-                <Route exact path="/about">
-                  <AboutScreen />
-                </Route>
-                <Route exact path="/contact">
-                  <ContactScreen />
-                </Route>
-              </>
+            {/* {!!this.state.entrySucces && (
+              <> */}
+            <Route exact path="/home">
+              <HomeScreen lat={lat} lon={lon} />
+            </Route>
+            <Route exact path="/about">
+              <AboutScreen />
+            </Route>
+            <Route exact path="/contact">
+              <ContactScreen />
+            </Route>
+            {/* </> */}
             )}
           </Switch>
         </Router>

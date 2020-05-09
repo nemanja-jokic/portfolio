@@ -3,7 +3,7 @@ import img from "../image/location.png";
 import Calculator from "./calculator";
 import TodoApp from "./todo";
 
-export default function Frame({ content, data, type, nav }) {
+export default function Frame({ content, data, type }) {
   var day = new Date().getDay();
   switch (day) {
     case 0:
@@ -30,6 +30,7 @@ export default function Frame({ content, data, type, nav }) {
     default:
       break;
   }
+
   return (
     <div className="frame">
       {type === "REAL-TIME-WEATHER" ? (

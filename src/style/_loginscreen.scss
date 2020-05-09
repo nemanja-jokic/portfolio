@@ -12,6 +12,25 @@
     background-color: #f7f7f7;
     padding: 20px 40px;
 
+    //this is just while we working on email checker and pasword check//////////////////
+    display: flex;
+    justify-content: space-between;
+    .arrow-button {
+      cursor: pointer;
+      .alert-message {
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 5px;
+      }
+      &:hover {
+        .alert-message {
+          display: block;
+        }
+      }
+    }
+
+    //all this ////////////////
     h2 {
       margin: 0;
     }

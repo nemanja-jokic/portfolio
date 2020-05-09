@@ -37,6 +37,7 @@ export default class HomeScreen extends Component {
   }
 
   render() {
+    console.log("home -- ", this.state.weatherData);
     return (
       <div>
         <Frame
