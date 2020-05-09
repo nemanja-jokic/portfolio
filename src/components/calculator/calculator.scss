@@ -5,7 +5,9 @@
   min-width: 300px;
   border-radius: 10px;
   padding: 30px;
-  background: #8d5151;
+  background: #64b4bb;
+  color: brown;
+  font-family: fantasy;
 
   &-command {
     display: flex;
@@ -14,13 +16,14 @@
 
     .button {
       border: 1px solid black;
-      background: rgb(72, 117, 3);
-      border-radius: 20px;
+      background: #bfe497;
+      border-radius: 10px;
       flex-basis: 30.5%;
       padding: 6px 0;
       margin: 0 1px 10px 0;
+
       &:hover {
-        background: rgb(148, 252, 116);
+        background: #d8ffac85;
       }
     }
   }
@@ -31,6 +34,8 @@
     font-size: 20px;
     margin-bottom: 15px;
     border-radius: 14px;
+    font-family: sans-serif;
+    color: #d5d8f6;
   }
   &-buttons {
     display: flex;
@@ -40,7 +45,7 @@
       flex-wrap: wrap;
 
       .button {
-        background: #82f388;
+        background: #f6fca6;
         width: 32.5%;
         padding: 10px;
         border: 1px solid black;
@@ -54,28 +59,28 @@
       justify-content: space-between;
 
       .button {
-        background: #82f388;
+        background: #bfe497;
         border: 1px solid black;
 
         padding: 10px;
         &:hover {
-          background: #67be6b;
+          background: #d8ffac85;
         }
       }
     }
   }
 }
 .zero {
-  border-radius: 20px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
-  background: #82f388;
+  background: #f6fca6;
   align-items: center;
   width: 98%;
   padding: 10px;
   border: 1px solid black;
   &:hover {
-    background: #67be6b;
+    background: #d8ffac85;
   }
 }
 .button {
@@ -83,9 +88,9 @@
   align-items: center;
   text-align: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 10px;
 
   &:hover {
-    background: #67be6b;
+    background: #d8ffac85;
   }
 }

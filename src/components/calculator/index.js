@@ -56,14 +56,16 @@ export default class Calculator extends Component {
         this.setState({
           result: "0",
         });
-      } else if (
-        this.state.calculator === false &&
+      } else if (this.state.calculator === false) {
         e.target.title !== "operation"
-      ) {
-        this.setState({
-          result: e.target.id,
-          calculator: true,
-        });
+          ? this.setState({
+              result: e.target.id,
+              calculator: true,
+            })
+          : this.setState({
+              result: this.state.result + e.target.id,
+              calculator: true,
+            });
       } else {
         this.setState({
           result:
