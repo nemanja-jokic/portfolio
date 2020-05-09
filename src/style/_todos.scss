@@ -1,0 +1,14 @@
+.collection-item {
+  max-width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 7px;
+  .todo-button {
+    border: 1px solid black;
+    padding: 3px;
+    border-radius: 50%;
+    width: 25px;
+    text-align: center;
+  }
+}
