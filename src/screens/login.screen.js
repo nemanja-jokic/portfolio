@@ -11,6 +11,7 @@ class LoginScreen extends Component {
       email: "",
       password: "",
       password2: "",
+
     };
   }
 
@@ -48,6 +49,7 @@ class LoginScreen extends Component {
   };
   checkInputs = (e) => {
     e.preventDefault();
+
     const alert = "error";
 
     const { username, email, password, password2 } = this.state;
@@ -68,6 +70,7 @@ class LoginScreen extends Component {
     } else {
       // this.success(username);
       this.UserNameHandler("success", "");
+
       //  this.props.submit();
       // a = true;
     }
@@ -117,6 +120,7 @@ class LoginScreen extends Component {
   };
 
   render() {
+
     const {
       userNameAlertMessage,
       emailAlertMessage,
@@ -127,6 +131,7 @@ class LoginScreen extends Component {
       passwordAlert,
       paswordCheckAlert,
     } = this.state;
+
 
     return (
       <div id="login-container">
@@ -169,7 +174,9 @@ class LoginScreen extends Component {
             />
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
+
             <small>{emailAlertMessage}</small>
+
           </div>
 
           <div className={`${passwordAlert} form-control`}>
