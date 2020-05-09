@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "./logoVeselaTipca.png";
+// import Logo from "./logoVeselaTipca.png";
 
 export default class Nav extends React.Component {
   constructor(props) {
@@ -15,11 +15,11 @@ export default class Nav extends React.Component {
   render() {
     return (
       <div className="nav-bar">
-        <div className="logo">
+        {/* <div className="logo">
           <Link to={"/home"}>
             <img style={{ width: "85px" }} src={Logo} alt="logo" />
           </Link>
-        </div>
+        </div> */}
 
         <nav id="nav">
           <ul>

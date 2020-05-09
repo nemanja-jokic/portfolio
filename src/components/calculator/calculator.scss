@@ -3,15 +3,22 @@
   flex-direction: column;
   width: 60%;
   min-width: 300px;
+  border-radius: 10px;
+  padding: 30px;
+  background: #8d5151;
 
   &-command {
     display: flex;
-    background: rgb(216, 255, 156);
+    justify-content: space-between;
     margin: 3px 0;
 
     .button {
-      flex-basis: 33.5%;
+      border: 1px solid black;
+      background: rgb(72, 117, 3);
+      border-radius: 20px;
+      flex-basis: 30.5%;
       padding: 6px 0;
+      margin: 0 1px 10px 0;
       &:hover {
         background: rgb(148, 252, 116);
       }
@@ -22,6 +29,8 @@
     background: grey;
     padding: 8px 10px;
     font-size: 20px;
+    margin-bottom: 15px;
+    border-radius: 14px;
   }
   &-buttons {
     display: flex;
@@ -31,22 +40,23 @@
       flex-wrap: wrap;
 
       .button {
-        background: #ff7272;
+        background: #82f388;
         width: 32.5%;
         padding: 10px;
         border: 1px solid black;
-        margin: 0px 1px 1px 0;
+        margin: 0px 1px 6px 0;
       }
     }
     &-operations {
-      flex-basis: 25%;
+      flex-basis: 35%;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
 
       .button {
         background: #82f388;
         border: 1px solid black;
-        margin-bottom: 1px;
+
         padding: 10px;
         &:hover {
           background: #67be6b;
@@ -56,15 +66,16 @@
   }
 }
 .zero {
+  border-radius: 20px;
   display: flex;
   justify-content: center;
-  background: #ff7272;
+  background: #82f388;
   align-items: center;
   width: 98%;
   padding: 10px;
   border: 1px solid black;
   &:hover {
-    background: #ff9f72;
+    background: #67be6b;
   }
 }
 .button {
@@ -72,8 +83,9 @@
   align-items: center;
   text-align: center;
   justify-content: center;
+  border-radius: 20px;
 
   &:hover {
-    background: #ff9f72;
+    background: #67be6b;
   }
 }
