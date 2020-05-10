@@ -5,6 +5,7 @@ import Button from "../components/button.js";
 class LoginScreen extends Component {
   constructor(props) {
     super(props);
+    this.passwordStrengthBar = React.createRef();
     this.state = {
       redirect: "",
       username: "",
@@ -18,6 +19,63 @@ class LoginScreen extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+    this.passwordStrongBar();
+  };
+  passwordStrongBar = () => {
+    if (!!this.state.password) {
+      var paswordStrength = 0;
+
+      if (this.state.password.length > 4) {
+        paswordStrength += 1;
+      }
+      //PROVERAVA VELIKA SLOVA
+      if (this.state.password.search(/[A-Z]/) !== -1) {
+        paswordStrength += 1;
+      }
+      //PROVERAVA BROJEVE
+      if (this.state.password.search(/[0-9]/) !== -1) {
+        paswordStrength += 1;
+      }
+      //PROVERAVA SPECIJALNE KARAKTERE
+      if (
+        this.state.password.search(/[!|@|#|$|%|^|&|(|)|_|+|*|-|/|.|,|:|;]/) !==
+        -1
+      ) {
+        paswordStrength += 1;
+      }
+      //PROVERAVA DUZINU OD PREKO 8 KARAKTERA
+      if (this.state.password.length > 8) {
+        paswordStrength += 1;
+      }
+      const spanTraka = this.passwordStrengthBar.current;
+      switch (paswordStrength) {
+        case 0:
+          spanTraka.style.width = 0 + "%";
+          spanTraka.style.backgroundColor = "yellow";
+          break;
+        case 1:
+          spanTraka.style.width = 20 + "%";
+          //	ubacivanjeIzrazaZaSnagu(snagaSifre)
+          break;
+        case 2:
+          spanTraka.style.width = 40 + "%";
+          //	ubacivanjeIzrazaZaSnagu(snagaSifre)
+          break;
+        case 3:
+          spanTraka.style.width = 60 + "%";
+          spanTraka.style.backgroundColor = "green";
+          //	ubacivanjeIzrazaZaSnagu(snagaSifre)
+          break;
+        case 4:
+          spanTraka.style.width = 80 + "%";
+          //ubacivanjeIzrazaZaSnagu(snagaSifre);
+          break;
+        case 5:
+          spanTraka.style.width = 100 + "%";
+          //ubacivanjeIzrazaZaSnagu(snagaSifre);
+          break;
+      }
+    }
   };
 
   UserNameHandler = (userNameAlert, userNameAlertMessage) => {
@@ -48,10 +106,12 @@ class LoginScreen extends Component {
   };
   checkInputs = (e) => {
     e.preventDefault();
+    const { username, email, password, password2 } = this.state;
+    const checkEmail = /^(([^<>()|[\]\\.,;:\s@"]+(\.[^<>()|[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+    );
 
     const alert = "error";
-
-    const { username, email, password, password2 } = this.state;
 
     if (username === "") {
       this.UserNameHandler(alert, "Please, enter your name.");
@@ -76,16 +136,10 @@ class LoginScreen extends Component {
 
     if (email === "") {
       this.emailHandler(alert, "Email can't be empty");
-    }
-    // else if(!proveriEmail(email)) {
-    //     this.setState({
-    //       error: 'error'
-    //       // error: 'E mail nije validan.'
-    //     })
-    // }
-    else {
+    } else if (!checkEmail) {
+      this.emailHandler(alert, "Please ,enter right email");
+    } else {
       this.emailHandler("success", "Email can't be empty");
-      // uspesno(email);
     }
 
     if (password.length < 8) {
@@ -187,7 +241,10 @@ class LoginScreen extends Component {
             <i className="fa fa-check-circle"></i>
             <i className="fa fa-exclamation-circle"></i>
             <div className="pasword-strength">
-              <div id="traka"></div>
+              <div
+                ref={this.passwordStrengthBar}
+                id="password-strength-bar"
+              ></div>
             </div>
             <p id="text">Upozorenje! CAPS LOCK je ukljucen.</p>
             <small>{passwordAlertMessage}</small>
