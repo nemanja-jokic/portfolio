@@ -1,10 +1,13 @@
 .card-wrapper {
   display: flex;
+  width: 95%;
   max-width: 700px;
   min-height: 400px;
   justify-content: center;
   margin: auto;
+  flex-wrap: wrap;
   &-left {
+    min-width: 233px;
     flex: 1;
     background: red;
     display: flex;
@@ -12,8 +15,9 @@
     justify-content: space-between;
     &-image {
       background: green;
-      height: 70px;
-      width: 70px;
+      height: 150px;
+      width: 150px;
+      margin: 10px;
     }
     &-social-info {
       text-align: left;
@@ -21,6 +25,7 @@
     }
   }
   &-right {
+    min-width: 200px;
     flex: 2;
     background: rgb(217, 255, 0);
   }

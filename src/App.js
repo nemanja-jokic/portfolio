@@ -37,30 +37,25 @@ class App extends React.Component {
           {this.state.redirect && <Redirect to={this.state.redirect} />}
           {!!this.state.entrySucces && <Nav />}
           <Switch>
-            {false && (
-              <>
-                {" "}
-                <Route exact path="/">
-                  <Modal
-                    removeModal={() =>
-                      this.setState({ modal: false, redirect: "/login" })
-                    }
-                  />
-                </Route>
-                <Route exact path="/login">
-                  <LoginScreen
-                    modal={this.state.modal}
-                    submit={() =>
-                      this.setState({
-                        entrySucces: true,
+            <Route exact path="/">
+              <Modal
+                removeModal={() =>
+                  this.setState({ modal: false, redirect: "/login" })
+                }
+              />
+            </Route>
+            <Route exact path="/login">
+              <LoginScreen
+                modal={this.state.modal}
+                submit={() =>
+                  this.setState({
+                    entrySucces: true,
 
-                        redirect: "/home",
-                      })
-                    }
-                  />
-                </Route>
-              </>
-            )}
+                    redirect: "/home",
+                  })
+                }
+              />
+            </Route>
             {/* {!!this.state.entrySucces && (
               <> */}
             <Route exact path="/home">
@@ -69,7 +64,7 @@ class App extends React.Component {
             <Route exact path="/about">
               <AboutScreen />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/contact">
               <ContactScreen />
             </Route>
             {/* </> */}
