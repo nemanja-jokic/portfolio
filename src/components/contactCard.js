@@ -10,6 +10,21 @@ export default class ContactCard extends Component {
             <p> Nemanja Jokić</p>
             <p>Junior Front End Developer</p>
             <p>Belgrade, Centralna Srbija, Serbia</p>
+            <div>
+              <a href="#">
+                {/* target="_blank" */}
+                <i className="linkendin">li</i>
+              </a>
+              <a href="#">
+                <i className="facebook">face</i>
+              </a>
+              <a href="#">
+                <i className="github">git</i>
+              </a>
+              <a href="#">
+                <i className="oykos">js</i>
+              </a>
+            </div>
           </div>
         </div>
         <div className="card-wrapper-right">INFO</div>
