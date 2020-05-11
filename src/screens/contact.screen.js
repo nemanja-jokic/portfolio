@@ -4,7 +4,9 @@ export default class ContactScreen extends Component {
   render() {
     return (
       <div>
-        <div>hello CONTACT</div>
+        <div style={{ textAlign: "center", paddingTop: "100px" }}>
+          ...UNDER CONSTRUCTION
+        </div>
       </div>
     );
   }

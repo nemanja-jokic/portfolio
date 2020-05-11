@@ -47,7 +47,9 @@ class LoginScreen extends Component {
       if (this.state.password.length > 8) {
         paswordStrength += 1;
       }
+      console.log(paswordStrength);
       const spanTraka = this.passwordStrengthBar.current;
+      console.log(spanTraka);
       switch (paswordStrength) {
         case 0:
           spanTraka.style.width = 0 + "%";
@@ -74,6 +76,7 @@ class LoginScreen extends Component {
           spanTraka.style.width = 100 + "%";
           //ubacivanjeIzrazaZaSnagu(snagaSifre);
           break;
+        default:
       }
     }
   };
@@ -242,11 +245,12 @@ class LoginScreen extends Component {
             <i className="fa fa-exclamation-circle"></i>
             <div className="pasword-strength">
               <div
+                style={{ height: "100%" }}
                 ref={this.passwordStrengthBar}
                 id="password-strength-bar"
               ></div>
             </div>
-            <p id="text">Upozorenje! CAPS LOCK je ukljucen.</p>
+
             <small>{passwordAlertMessage}</small>
           </div>
 
