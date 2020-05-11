@@ -1,0 +1,27 @@
+.card-wrapper {
+  display: flex;
+  max-width: 700px;
+  min-height: 400px;
+  justify-content: center;
+  margin: auto;
+  &-left {
+    flex: 1;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-image {
+      background: green;
+      height: 70px;
+      width: 70px;
+    }
+    &-social-info {
+      text-align: left;
+      margin-left: 10px;
+    }
+  }
+  &-right {
+    flex: 2;
+    background: rgb(217, 255, 0);
+  }
+}

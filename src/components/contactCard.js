@@ -5,14 +5,14 @@ export default class ContactCard extends Component {
     return (
       <div className="card-wrapper">
         <div className="card-wrapper-left">
-          <div className="card-image"></div>
-          <div className="card-info">
-            <p></p>
-            <p></p>
-            <p></p>
+          <div className="card-wrapper-left-image">IMAGE</div>
+          <div className="card-wrapper-left-social-info">
+            <p> Nemanja Jokić</p>
+            <p>Junior Front End Developer</p>
+            <p>Belgrade, Centralna Srbija, Serbia</p>
           </div>
         </div>
-        <div className="card-wrapper-right"></div>
+        <div className="card-wrapper-right">INFO</div>
       </div>
     );
   }
