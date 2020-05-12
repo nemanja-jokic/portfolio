@@ -14,13 +14,13 @@ export default class ContactCard extends Component {
             <div>
               <a href="#">
                 {/* target="_blank" */}
-                <i className="linkendin">li -- </i>
+                <i className="linkendin">li </i>--
               </a>
               <a href="#">
-                <i className="facebook"> face -- </i>
+                <i className="facebook"> face </i>--
               </a>
               <a href="#">
-                <i className="github"> git -- </i>
+                <i className="github"> git </i>--
               </a>
               <a href="#">
                 <i className="oykos"> js</i>
