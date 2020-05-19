@@ -7,13 +7,13 @@ export default class Calculator extends Component {
     super(props);
     this.state = {
       result: "0",
-      operationArray: [],
+      // operationArray: [],
     };
   }
 
   input = (e) => {
     let last = `${this.state.result}`[`${this.state.result}`.length - 1].match(
-      /[x]|[+]|[-]|[/]/
+      /[x+-/]/
     );
     if (this.state.calculator === false) {
       this.setState({

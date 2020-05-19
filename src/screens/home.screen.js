@@ -58,6 +58,7 @@ export default class HomeScreen extends Component {
         />
         <Frame type="CALCULATOR" />
         <Frame type="TODO-LIST" />
+        <Frame type="FOLDER TREE" />
       </div>
     );
   }

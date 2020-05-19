@@ -2,6 +2,7 @@ import React from "react";
 import img from "../image/location.png";
 import Calculator from "./calculator";
 import TodoApp from "./todo";
+import FolderTree from "./FolderTree";
 
 export default function Frame({ content, data, type }) {
   var day = new Date().getDay();
@@ -73,7 +74,7 @@ export default function Frame({ content, data, type }) {
           <TodoApp />
         </div>
       )}
-
+      {type === "FOLDER TREE" && <FolderTree />}
       <div className="like-place"> {type}</div>
     </div>
   );
