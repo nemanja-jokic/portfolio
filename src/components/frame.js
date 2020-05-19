@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../image/location.png";
+// import img from "../image/location.png";
 import Calculator from "./calculator";
 import TodoApp from "./todo";
 import FolderTree from "./FolderTree";
@@ -31,7 +31,7 @@ export default function Frame({ content, data, type }) {
     default:
       break;
   }
-
+  //switch statement bellow is better solution
   return (
     <div className="frame">
       {type === "REAL-TIME-WEATHER" ? (
@@ -69,12 +69,16 @@ export default function Frame({ content, data, type }) {
         <div>
           <Calculator />
         </div>
+      ) : type === "FOLDER TREE" ? (
+        <div>
+          <FolderTree />
+        </div>
       ) : (
         <div>
           <TodoApp />
         </div>
       )}
-      {type === "FOLDER TREE" && <FolderTree />}
+
       <div className="like-place"> {type}</div>
     </div>
   );

@@ -9,6 +9,7 @@ export default class FolderTree extends Component {
       return (
         <FolderComponent
           content={this.renderSubFolder(folderData.folder.parentFolder)}
+          folderData={folderData.folder}
         />
       );
     } else {
@@ -25,10 +26,11 @@ export default class FolderTree extends Component {
       a = (
         <FolderComponent
           content={this.renderSubFolder(folderData.parentFolder)}
+          folderData={folderData}
         />
       );
     } else {
-      a = <FolderComponent />;
+      a = <FolderComponent folderData={folderData} />;
     }
     return a;
   };

@@ -10,11 +10,10 @@ import {
 // import "./App.css";
 import LoginScreen from "./screens/login.screen";
 import "./style/app.scss";
-// import Modal from "./components/modal";
+import Modal from "./components/modal";
 import HomeScreen from "./screens/home.screen";
 import AboutScreen from "./screens/about.screen";
 import ContactScreen from "./screens/contact.screen";
-import FolderTree from "./components/FolderTree";
 
 class App extends React.Component {
   constructor(props) {
@@ -31,7 +30,7 @@ class App extends React.Component {
   }
   render() {
     const { lat, lon } = this.state;
-    console.log("APP -- ", lat, lon);
+
     return (
       <div className="App">
         <Router>
@@ -39,12 +38,11 @@ class App extends React.Component {
           {!!this.state.entrySucces && <Nav />}
           <Switch>
             <Route exact path="/">
-              <FolderTree />
-              {/* <Modal
+              <Modal
                 removeModal={() =>
                   this.setState({ modal: false, redirect: "/login" })
                 }
-              /> */}
+              />
             </Route>
             <Route exact path="/login">
               <LoginScreen
@@ -58,18 +56,18 @@ class App extends React.Component {
                 }
               />
             </Route>
-            {/* {!!this.state.entrySucces && (
-              <> */}
-            <Route exact path="home">
-              <HomeScreen lat={lat} lon={lon} />
-            </Route>
-            <Route exact path="/about">
-              <AboutScreen />
-            </Route>
-            <Route exact path="/contact">
-              <ContactScreen />
-            </Route>
-            {/* </> */}
+            {!!this.state.entrySucces && (
+              <>
+                <Route exact path="/home">
+                  <HomeScreen lat={lat} lon={lon} />
+                </Route>
+                <Route exact path="/about">
+                  <AboutScreen />
+                </Route>
+                <Route exact path="/contact">
+                  <ContactScreen />
+                </Route>
+              </>
             )}
           </Switch>
         </Router>
