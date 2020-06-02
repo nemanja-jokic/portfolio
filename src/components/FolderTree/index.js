@@ -4,7 +4,6 @@ import { folderData } from "./folderTree";
 
 export default class FolderTree extends Component {
   renderFolder = () => {
-    console.log(folderData);
     if (folderData.folder.folderType === "organizer") {
       return (
         <FolderComponent
@@ -17,7 +16,6 @@ export default class FolderTree extends Component {
     }
   };
   renderSubFolder = (folderData) => {
-    console.log(folderData);
     if (!folderData) {
       return;
     }

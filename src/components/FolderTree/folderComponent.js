@@ -8,12 +8,11 @@ export default class FolderComponent extends Component {
     };
   }
   render() {
-    console.log(this.props.folderData);
     return (
       <div className="folder">
         <div className="folder-wrapper">
           <i
-            class={
+            className={
               !!this.state.open
                 ? this.props.folderData.folderType !== "docFolder"
                   ? "fa fa-folder-open"
